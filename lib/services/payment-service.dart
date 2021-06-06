@@ -12,14 +12,14 @@ class StripeTransactionResponse {
 class StripeService {
   static String apiBase = 'https://api.stripe.com/v1';
   static String paymentApiUrl = '${StripeService.apiBase}/payment_intents';
-  static String secret = 'secret code';//enter your secret code
+  static String secret = '';//enter your secret code
   static Map<String, String> headers = {
     'Authorization': 'Bearer ${StripeService.secret}',
     'Content-Type': 'application/x-www-form-urlencoded'
   };
   static init() {
     StripePayment.setOptions(StripeOptions(
-        publishableKey: "publish code",//enter your publish code
+        publishableKey: "",//enter your publish code
         merchantId: "Test",
         androidPayMode: 'test'));
   }

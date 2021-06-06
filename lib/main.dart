@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe_payments/pages/existing-cards.dart';
 import 'package:flutter_stripe_payments/pages/home.dart';
+import 'package:flutter_stripe_payments/pages/new%20card.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home': (context) => HomePage(),
-        '/existing-cards': (context) => ExistingCardsPage()
+        '/existing-cards': (context) => ExistingCardsPage(),
+        '/new-card':(context)=>MySample()
       },
     );
   }

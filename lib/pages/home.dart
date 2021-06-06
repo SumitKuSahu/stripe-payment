@@ -14,10 +14,14 @@ class HomePageState extends State<HomePage> {
   onItemPress(BuildContext context, int index) async {
     switch(index) {
       case 0:
-        payViaNewCard(context);
+        Navigator.pushNamed(context, '/new-card');
         break;
       case 1:
         Navigator.pushNamed(context, '/existing-cards');
+        break;
+      case 2:
+
+        payViaNewCard(context);
         break;
     }
   }
@@ -64,11 +68,15 @@ class HomePageState extends State<HomePage> {
               switch(index) {
                 case 0:
                   icon = Icon(Icons.add_circle, color: theme.primaryColor);
-                  text = Text('Pay via new card');
+                  text = Text('Add new card');
                   break;
                 case 1:
                   icon = Icon(Icons.credit_card, color: theme.primaryColor);
                   text = Text('Pay via existing card');
+                  break;
+                case 2:
+                  icon = Icon(Icons.credit_card, color: theme.primaryColor);
+                  text = Text('Pay via new card');
                   break;
               }
 
@@ -85,9 +93,9 @@ class HomePageState extends State<HomePage> {
             separatorBuilder: (context, index) => Divider(
               color: theme.primaryColor,
             ),
-            itemCount: 2
+            itemCount: 3
         ),
       ),
-    );;
+    );
   }
 }
